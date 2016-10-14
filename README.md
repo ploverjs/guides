@@ -4,11 +4,9 @@
 ## 简介
 
 
-Plover（千鸟）是一个专注于 **模块化方式构建web应用** 的NodeJs MVC web框架。不同于其它web框架，它提供完整的应用和模块化模型可以让复杂的业务功能可以方便地抽象成多个模块的方式进行独立开发，让应用可以像搭积目的方式拼装模块而成。
-
-Plover基于[koa](http://koajs.com)构建，它可以很方便地独立部署或者集成到其他koa的应用一起部署。
-
-Plover专注于 **模块化** ，为 **快速构建web应用** 提供最佳方案 
+Plover（千鸟）是一个专注于 **模块化方式构建web应用** 的NodeJs MVC web框架。不同于其它web框架，它提供完整的应用和模块化模型可以让复杂的业务功能可以方便地抽象成多个模块的方式进行独立开发，让应用可以像搭积目的方式拼装模块而成。  
+Plover基于[koa](http://koajs.com)构建，它可以很方便地独立部署或者集成到其他koa的应用一起部署。  
+Plover专注于 **模块化** ，为 **快速构建web应用** 提供最佳方案  
 
 
 ## 关于文档
@@ -22,12 +20,11 @@ Plover专注于 **模块化** ，为 **快速构建web应用** 提供最佳方�
 ```shell
 $ git clone git@github.com:ploverjs/examples.git
 $ cd examples
-$ git checkout hello-plover   # 可能需要切换到某一示例分支
 $ npm install
 $ npm start
 ```
 
-正常启动后，可以访问`http://127.0.0.1:4000`访问示例
+正常启动后，可以访问`http://127.0.0.1:4000`访问示例。
 
 
 ## 前提
