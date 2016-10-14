@@ -36,5 +36,5 @@ $ npm start
 
 ## 开始使用
 
-- [Hello Plover](docs/hello.md)
+- [Hello Plover](docs/start/hello.md)
 
