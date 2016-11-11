@@ -11,38 +11,39 @@
 
 在开始之前可以运行以下示例：
 
-```
-git clone git@github.com:ploverjs/guides.git
-cd guides
-git checkout hello
+```shell
+git clone git@github.com:ploverjs/examples.git
+cd examples/hello
 npm install
 npm start
 ```
 
 启动成功后访问 `http://127.0.0.1:4000` 就可以看到结果。  
 
-文档中的其他示例都会以**git分支**的方式提供，如未作特别说明都可以使用以下步骤运行：
-
-```
-git checkout ${branch-name}  # 切换到示例分支
-npm install   # 安装依赖模块
-npm start     # 运行
-```
 
 ## 应用结构
 
-如果没有下载示例，也可以在github上查看应用结构 [hello](https://github.com/ploverjs/guides/tree/hello)。 
+如果没有下载示例，也可以在github上查看应用结构 [hello](https://github.com/ploverjs/examples/tree/master/hello)。 
 
 
 ```
-guides/
+hello/
   config/     # 配置
     app.js      # 应用配置
     routes.js   # 路由配置
 
   modules/    # 模块
     home/       # 一个叫`home`的模块
+      views/      # 模板目录
+        index.ejs   # ejs模板文伯
+
       index.js    # 控制器
+
+    layouts/    # 一个叫`layouts`的模块，用于布局。
+      views/
+        view.ejs
+
+      index.js    # 布局控制器
 
   node_modules/
 
@@ -59,16 +60,16 @@ guides/
 
 引入plover依赖，定义启动入口。
 
-```
+```js
 dependencies: {
-  "ploverx": "~2.1.0"
+  "ploverx": "^2.1.2"
 }
 ```
 
 [plover](https://github.com/ploverjs/plover) 核心主要提供了模块管理和渲染的功能。web应用需要的其他功能都是以插件形式提供的。为了方便使用，[ploverx](https://github.com/ploverjs/ploverx)模块聚合一组最常用的模块，所以只要使用这个模块即可。[ploverjs](https://github.com/ploverjs)组中维护着许多插件。
 
 
-```
+```js
 scripts: {
   "start": "node app.js"
 }
@@ -114,18 +115,70 @@ module.exports = ({ get }) => {
 
 ### modules/
 
-承载应用相关模块的主目录。刚刚的示例只有一个`home`模块。  
+承载应用相关模块的主目录。刚才的示例有一个`home`模块和一个`layouts`模块。  
 一个模块包含涉及功能的所有资源。由控制器、模板、js、css和图片资源等组成。  
 
-示例模块非常简单，只包含一个控制器：
+比如`home`模块包含一个控制器**index.js**和一个模板文件**index.ejs**。
+
+
+### index 模块
+
+- index.js
 
 ```js
 exports.index = function() {
-  this.body = 'Hello Plover!';
+  this.render({ title: 'Hello Plover' });
 };
 ```
 
-此控制器有一个action方法用于直接输出内容，后续会看到如果使用模板引擎渲染页面。
+控制器向模板传递数据用于展示。
 
 
+- views/index.ejs
 
+```ejs
+<h1><%= title %></h1>
+```
+
+模板使用数据渲染输出。
+
+以上模板只包含HTML片断，但渲染结果却是完整的HTML页面，这是通过layout来完成的。layout本身也是一个模块，默认为**layouts**模块。
+
+
+### layouts 模块
+
+
+- index.js
+
+```js
+exports.view = function() {
+  const data = {
+    pageTitle: 'plover示例'
+  };
+
+  this.render(data);
+};
+```
+
+和index模块相比较，layout模块的控制器也没有特别的地方，同样向模板传递数据用于渲染。
+
+
+- views/view.ejx
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= pageTitle %></title>
+  </head>
+  <body>
+    <%- content %>
+  </body>
+</html>
+```
+
+- `pageTitle`变量来自于layouts模块的控制器。
+- `content` 即为 index 模块的渲染结果。
