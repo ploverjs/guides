@@ -41,7 +41,7 @@ hello/
 
     layouts/    # 一个叫`layouts`的模块，用于布局。
       views/
-        view.ejs
+        index.ejs
 
       index.js    # 布局控制器
 
@@ -151,7 +151,7 @@ exports.index = function() {
 - index.js
 
 ```js
-exports.view = function() {
+exports.index = function() {
   const data = {
     pageTitle: 'plover示例'
   };
@@ -163,7 +163,7 @@ exports.view = function() {
 和index模块相比较，layout模块的控制器也没有特别的地方，同样向模板传递数据用于渲染。
 
 
-- views/view.ejs
+- views/index.ejs
 
 
 ```html
