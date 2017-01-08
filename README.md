@@ -37,3 +37,7 @@ $ npm start
 ## 开始使用
 
 - [Hello Plover](docs/start/hello.md)
+
+## 参考
+- [路由](https://github.com/alibaba/plover/tree/master/packages/plover-router)
+- [web中间件](https://github.com/alibaba/plover/tree/master/packages/plover-web)

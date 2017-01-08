@@ -62,7 +62,7 @@ hello/
 
 ```js
 dependencies: {
-  "ploverx": "^2.1.2"
+  "ploverx": "^2.4.0"
 }
 ```
 
