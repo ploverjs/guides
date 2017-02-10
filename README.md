@@ -38,6 +38,15 @@ $ npm start
 
 - [Hello Plover](docs/start/hello.md)
 
+
+## 示例
+
+- [Hello Plover](https://github.com/ploverjs/examples/tree/master/hello)
+- [静态资源的访问](https://github.com/ploverjs/examples/tree/master/static)
+- [路由和RESTful](https://github.com/ploverjs/examples/tree/master/routes)
+- [结合React使用](https://github.com/ploverjs/examples/tree/master/react)
+
+
 ## 参考
 - [路由](https://github.com/alibaba/plover/tree/master/packages/plover-router)
 - [web中间件](https://github.com/alibaba/plover/tree/master/packages/plover-web)
