@@ -31,7 +31,7 @@ $ npm start
 
 首先你需要了解[NodeJs](http://nodejs.org)。[七天学会NodeJs](http://nqdeng.github.io/7-days-nodejs/)是一份不错的入门书籍。  
 由于Plover基于[Koa](http://koajs.com/)搭建，因此需要对它有个基本的了解。你需要知道什么是**中间件**，以及熟悉常见的API，至少能够使用它搭建HelloWorld应用。  
-此外必须熟悉ES6中的**生成器**，因为在正式的开发中我们会经常使用到它。可以参考阮一峰的[Generator](http://es6.ruanyifeng.com/#docs/generator)来学习。
+此外必须熟悉ES6中的**生成器** 或 ES7中的`async/await`，因为在正式的开发中我们会经常使用到它。可以参考阮一峰的[Generator](http://es6.ruanyifeng.com/#docs/generator)来学习。
 
 
 ## 开始使用
