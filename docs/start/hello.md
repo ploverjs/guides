@@ -121,7 +121,7 @@ module.exports = ({ get }) => {
 比如`home`模块包含一个控制器**index.js**和一个模板文件**index.ejs**。
 
 
-### index 模块
+### home 模块
 
 - index.js
 
@@ -159,7 +159,7 @@ exports.index = () => {
 };
 ```
 
-和index模块相比较，layout模块的控制器也没有特别的地方，同样向模板传递数据用于渲染。
+和home模块相比较，layout模块的控制器也没有特别的地方，同样向模板传递数据用于渲染。
 
 
 - views/index.ejs
@@ -180,4 +180,4 @@ exports.index = () => {
 ```
 
 - `pageTitle`变量来自于layouts模块的控制器。
-- `content` 即为 index 模块的渲染结果。
+- `content` 即为 home 模块的渲染结果。
